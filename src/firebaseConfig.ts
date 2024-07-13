@@ -1,24 +1,23 @@
 // src/firebaseConfig.ts
 
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCPMTdOKRNAj9ug6erx7ValT8pMJUWW6_Y",
-    authDomain: "venture-bot-cecb7.firebaseapp.com",
-    projectId: "venture-bot-cecb7",
-    storageBucket: "venture-bot-cecb7.appspot.com",
-    messagingSenderId: "558330279519",
-    appId: "1:558330279519:web:00636fa8ec2ad45e9a4dea",
-    measurementId: "G-S1GH07RS83"
-  };
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
+};
 
-// Initialize Firebase
-// Initialize Firebase
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
-export { app, db };
+export { app, db, auth };
