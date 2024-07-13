@@ -27,10 +27,10 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div className="w-full">
+      <div className="w-[90%] max-w-[1200px] mx-auto mt-20">
+        <h1 className="text-white text-6xl mb-5">Add Lead</h1>
         <div className="App bg-blue p-5 mx-auto">
           <header className="App-header">
-            <h1>Add Lead</h1>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -39,6 +39,7 @@ const App: React.FC = () => {
             >
               <input
                 type="text"
+                className="bg-dark"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="Address"
@@ -46,6 +47,7 @@ const App: React.FC = () => {
               />
               <input
                 type="text"
+                className="ml-5 bg-dark"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 placeholder="First Name"
@@ -53,12 +55,18 @@ const App: React.FC = () => {
               />
               <input
                 type="text"
+                className="ml-5 bg-dark"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 placeholder="Last Name"
                 required
               />
-              <button type="submit">Add Lead</button>
+              <button
+                className="ml-10 bg-orange p-3 font-bold shadow-md"
+                type="submit"
+              >
+                Add Lead
+              </button>
             </form>
             <LeadsList />
           </header>

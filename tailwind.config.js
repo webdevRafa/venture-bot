@@ -6,7 +6,10 @@ export default {
   ],
   theme: {
     colors: {
-      'blue': "#0044CC"
+      'blue': "#0044CC",
+      'dark': "#02102A",
+      'white': "#FFFFFF",
+      'orange': "#FF5733"
     },
     extend: {},
   },
