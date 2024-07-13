@@ -28,13 +28,16 @@ const LeadsList: React.FC = () => {
   return (
     <div>
       <h2>Leads</h2>
-      <ul>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {leads.map((lead) => (
-          <li key={lead.id}>
-            {lead.firstName} {lead.lastName} - {lead.address}
-          </li>
+          <div key={lead.id} className="p-2 border">
+            <p>
+              {lead.firstName} {lead.lastName}
+            </p>
+            <p>{lead.address}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
